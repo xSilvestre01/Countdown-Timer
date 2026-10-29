@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bigzix Cinema - Showing Soon</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Imbue:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+
+        /* The first part is the design of all the text and the fonts for all sizes. 'Yung mga placement is under ng @media. */
+
+        /* Here po the html is for making the page the full height of the screen. */
+        html {
+            height: 100%;
+        }
+
+        /* Here po the body is for the page setup: full height, no white space around, and the dark brown color. */
+        body {
+            height: 100%;
+            margin: 0px;
+            background-color: #2b2118;
+        }
+
+        /* Here po the .bg is for the background photo. It covers the whole screen and stays fixed. */
+        .bg {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Here po the .brand is for the BIGZIX CINEMA name at the top left. */
+        .brand {
+            position: absolute;
+            margin: 0px;
+            font-family: "Work Sans", Arial;
+            color: #D5B27A;
+        }
+
+        /* Here po the .center is for the middle part that holds SHOWING SOON, the title, the tagline and the countdown. */
+        .center {
+            position: absolute;
+            text-align: center;
+        }
+
+        /* Here po the .showing is for the SHOWING SOON text. Imbue shows only if it is installed, if not it uses Times New Roman. */
+        .showing {
+            margin: 0px;
+            font-family: Imbue, "Times New Roman";
+            line-height: 1;
+            font-weight: bold;
+            color: #e8d1a9;
+        }
+
+        /* Here po the .title is for the title Ang pagmamahal na lumisan. */
+        .title {
+            margin: 0.58em 0px 0px 0px;
+            font-family: Imbue, "Times New Roman";
+            line-height: 1;
+            font-weight: normal;
+            color: #d8b07b;
+        }
+
+        /* Here po the .tagline is for the text Will he ever love again? */
+        .tagline {
+            margin: 0.66em 0px 0px 0px;
+            font-family: "DM Sans", Arial;
+            line-height: 1.2;
+            color: #d8b07b;
+        }
+
+        /* Here po the .number is for the countdown numbers (03:02:32:44). */
+        .number {
+            margin: 1.37em 0px 0px 0px;
+            font-family: "DM Sans", Arial;
+            line-height: 1;
+            font-weight: bold;
+            color: #e8d1a9;
+        }
+
+        /* Here po the .labels is for the words under the numbers (DAYS, HOURS, MINUTES, SECONDS). */
+        .labels {
+            margin: 0.7em 0px 0px 0px;
+            font-family: "Work Sans", Arial;
+            line-height: 1;
+            font-weight: bold;
+            color: #e8d1a9;
+        }
+
+        /* Here po the .digit, .colon, .label and .gap are for putting the countdown pieces side by side on one line. */
+        .digit,
+        .colon,
+        .label,
+        .gap {
+            display: inline-block;
+        }
+
+        /* Here po the .box is for the three boxes. The rgba makes the dark color see-through. */
+        .box {
+            position: absolute;
+            background-color: rgba(23, 21, 19, 0.78);
+            border: 1px solid rgba(213, 178, 122, 0.28);
+            font-family: "Work Sans", Arial;
+            color: white;
+            text-align: center;
+        }
+
+        /* Here po the .boxtitle is for the headings inside the boxes (TICKETS, LOCATION, PROMO). */
+        .boxtitle {
+            margin: 0px;
+            font-family: Imbue, "Times New Roman";
+            line-height: 1;
+            font-weight: normal;
+            color: #D5B27A;
+        }
+
+        /* Here po the .sticket is for the text inside the boxes. */
+        .sticket {
+            margin: 0px;
+            line-height: 1.8;
+            font-weight: bold;
+        }
+
+        /* Here po the .limited is for the small text LIMITED SLOTS ONLY! in the promo box. */
+        .limited {
+            line-height: 1;
+            font-weight: bold;
+        }
+
+        /* Here po the .tickets is for the bottom text GET YOUR TICKETS NOW. */
+        .tickets {
+            position: absolute;
+            margin: 0px;
+            text-align: center;
+            font-family: "Work Sans", Arial;
+            color: #D5B27A;
+        }
+
+
+        /* Here po the laptop / desktop block (1281px wide and up) is for the sizes and placement on big screens. The text and boxes are on the right, the person is on the left. */
+        @media only screen and (min-width: 1281px) {
+
+            .brand {
+                top: 5.5%;
+                left: 4.5%;
+                font-size: 17px;
+                letter-spacing: 4px;
+            }
+
+            /* Here po the .center is for the place of the middle part: 14% from the top, 30% from the left, 60% wide. */
+            .center {
+                top: 14%;
+                left: 30%;
+                width: 60%;
+            }
+
+            .showing {
+                font-size: 32px;
+                letter-spacing: 1px;
+            }
+
+            .title {
+                font-size: 74px;
+            }
+
+            .tagline {
+                font-size: 22px;
+            }
+
+            .number {
+                font-size: 46px;
+                letter-spacing: 6px;
+            }
+
+            /* Here po the .digit and .label are for the same width, so each label sits under its number. */
+            .digit {
+                width: 9.7%;
+            }
+
+            .colon {
+                width: 2.4%;
+            }
+
+            .labels {
+                font-size: 14px;
+                letter-spacing: 2px;
+            }
+
+            .label {
+                width: 9.7%;
+            }
+
+            .gap {
+                width: 2.4%;
+            }
+
+            /* Here po the .box is for the size and top place of the three boxes. */
+            .box {
+                top: 62.8%;
+                width: 13.4%;
+                height: 25%;
+                padding: 14px 1% 0px 1%;
+            }
+
+            /* Here po the #box1, #box2 and #box3 are for the place of each box from the left. */
+            #box1 {
+                left: 33.8%;
+            }
+
+            #box2 {
+                left: 53.7%;
+            }
+
+            #box3 {
+                left: 73.7%;
+            }
+
+            .boxtitle {
+                margin-bottom: 17px;
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+
+            .sticket {
+                font-size: 14px;
+                letter-spacing: 3px;
+            }
+
+            .promo {
+                font-size: 13px;
+            }
+
+            .limited {
+                margin: 14px 0px 0px 0px;
+                font-size: 11px;
+                letter-spacing: 2px;
+            }
+
+            /* Here po the .tickets is for putting the bottom text in the middle under the three boxes. */
+            .tickets {
+                bottom: 3%;
+                left: 31.5%;
+                width: 60%;
+                font-size: 14px;
+                letter-spacing: 3px;
+            }
+        }
+
+
+        /* Here po the tablet block (1280px wide and below) is for the sizes and placement on tablets, made for 1280 x 768. It also reaches phones, so the mobile block after it cancels what does not fit. */
+        @media only screen and (max-width: 1280px) {
+
+            .brand {
+                top: 4%;
+                left: 4.5%;
+                font-size: 15px;
+                letter-spacing: 3px;
+            }
+
+            /* Here po the .center is for the middle part, higher on the screen because a tablet is wider than tall. */
+            .center {
+                top: 20%;
+                left: 32%;
+                width: 60%;
+            }
+
+            .showing {
+                font-size: 30px;
+                letter-spacing: 1px;
+            }
+
+            .title {
+                font-size: 64px;
+            }
+
+            .tagline {
+                font-size: 24px;
+            }
+
+            .number {
+                font-size: 32px;
+                letter-spacing: 4px;
+            }
+
+            .digit {
+                width: 12%;
+            }
+
+            .colon {
+                width: 2.5%;
+            }
+
+            .labels {
+                font-size: 12px;
+                letter-spacing: 1px;
+            }
+
+            .label {
+                width: 12%;
+            }
+
+            .gap {
+                width: 2.5%;
+            }
+
+            /* Here po the .box is for the three boxes on the right, a little higher than the laptop. */
+            .box {
+                top: 60%;
+                width: 13.4%;
+                height: 24%;
+                padding: 15px 1% 0px 1%;
+            }
+
+            #box1 {
+                left: 33.8%;
+            }
+
+            #box2 {
+                left: 53.7%;
+            }
+
+            #box3 {
+                left: 73.7%;
+            }
+
+            .boxtitle {
+                margin-bottom: 12px;
+                font-size: 17px;
+                letter-spacing: 2px;
+            }
+
+            .sticket {
+                font-size: 12px;
+                letter-spacing: 2px;
+            }
+
+            .promo {
+                font-size: 11px;
+            }
+
+            .limited {
+                margin: 10px 0px 0px 0px;
+                font-size: 10px;
+                letter-spacing: 1px;
+            }
+
+            /* Here po the .tickets is for moving the bottom text up, so it does not get cut off by the browser bar. */
+            .tickets {
+                bottom: 6%;
+                left: 31.5%;
+                width: 60%;
+                font-size: 13px;
+                letter-spacing: 3px;
+            }
+        }
+
+
+        /* para hindi mag overlap ang boxes and texts pag zinozoom or sa ibang device naka open ang website */
+        @media only screen and (min-width: 768px) and (max-height: 700px) {
+
+            body {
+                height: auto;
+            }
+
+            .center {
+                position: relative;
+                left: auto;
+                margin-left: 30%;
+                padding-top: 60px;
+            }
+
+            .box {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                width: 18%;
+                height: auto;
+                margin: 24px 0px 0px 0px;
+                padding: 14px 1%;
+                box-sizing: border-box;
+            }
+
+            #box1 {
+                left: auto;
+                margin-left: 30%;
+            }
+
+            #box2,
+            #box3 {
+                left: auto;
+                margin-left: 1%;
+            }
+
+            .tickets {
+                position: relative;
+                left: auto;
+                width: 100%;
+                margin: 24px 0px 30px 0px;
+            }
+        }
+
+
+        /* Here po the mobile block (767px wide and below) is for the sizes and placement on phones. Everything goes one under the other. */
+        @media only screen and (max-width: 767px) {
+
+            /* Here po the body is for letting the page grow taller than the screen, so it can scroll. */
+            body {
+                height: auto;
+            }
+
+            /* Here po the .bg is for showing the left side of the photo. The 100vh height keeps the photo the same size while scrolling. */
+            .bg {
+                height: 100vh;
+                object-position: 10% ;
+            }
+
+            .brand {
+                top: 20px;
+                left: 20px;
+                font-size: 14px;
+                letter-spacing: 3px;
+            }
+
+            /* Here po the .center is for following the normal flow of the page, with space on top for the name. */
+            .center {
+                position: relative;
+                left: 0px;
+                width: 100%;
+                padding-top: 70px;
+            }
+
+            .showing {
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+
+            /* Here po the .title is for a smaller title that can go to 2 lines on a small phone. */
+            .title {
+                padding: 0px 20px;
+                font-size: 40px;
+                line-height: 1.1;
+            }
+
+            .tagline {
+                font-size: 16px;
+            }
+
+            .number {
+                font-size: 32px;
+                letter-spacing: 3px;
+            }
+
+            .digit {
+                width: 17%;
+            }
+
+            .colon {
+                width: 4.5%;
+            }
+
+            .labels {
+                font-size: 11px;
+                letter-spacing: 1px;
+            }
+
+            .label {
+                width: 17%;
+            }
+
+            .gap {
+                width: 4.5%;
+            }
+
+            /* Here po the .box is for putting the boxes one under the other, in the middle of the screen. */
+            .box {
+                position: relative;
+                width: 70%;
+                height: auto;
+                margin: 20px auto 0px auto;
+                padding: 20px 5%;
+            }
+
+            /* Here po the #box1, #box2 and #box3 are for canceling the tablet places, so the boxes do not move sideways. */
+            #box1,
+            #box2,
+            #box3 {
+                left: 0px;
+            }
+
+            .boxtitle {
+                margin-bottom: 12px;
+                font-size: 22px;
+                letter-spacing: 3px;
+            }
+
+            .sticket {
+                font-size: 14px;
+                letter-spacing: 2px;
+            }
+
+            .limited {
+                margin: 12px 0px 0px 0px;
+                font-size: 12px;
+                letter-spacing: 2px;
+            }
+
+            /* Here po the .tickets is for putting the bottom text under the last box and canceling the tablet places. */
+            .tickets {
+                position: relative;
+                left: 0px;
+                width: 100%;
+                margin: 30px 0px;
+                font-size: 14px;
+                letter-spacing: 3px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <img class="bg" src="../IMAGES/background.svg" alt="Background">
+
+    <p class="brand">BIGZIX CINEMA</p>
+
+    <div class="center">
+        <p class="showing">SHOWING SOON</p>
+        <h1 class="title">Ang pagmamahal na lumisan</h1>
+        <p class="tagline">Will he ever love again?</p>
+
+        <p class="number"><span class="digit">03</span><span class="colon">:</span><span class="digit">02</span><span class="colon">:</span><span class="digit">32</span><span class="colon">:</span><span class="digit">44</span></p>
+        <p class="labels"><span class="label">DAYS</span><span class="gap"></span><span class="label">HOURS</span><span class="gap"></span><span class="label">MINUTES</span><span class="gap"></span><span class="label">SECONDS</span></p>
+    </div>
+
+    <div class="box" id="box1">
+        <h2 class="boxtitle">TICKETS</h2>
+        <p class="sticket">BOOK ONLINE <br>OR AT THE<br>BIGZIX CINEMA<br>BOX OFFICE.</p>
+    </div>
+
+    <div class="box" id="box2">
+        <h2 class="boxtitle">LOCATION</h2>
+        <p class="sticket">ALABANG-ZAPOTE ROAD, PILAR VILLAGE, ALMANZA UNO, LAS PIÑAS.</p>
+    </div>
+
+    <div class="box" id="box3">
+        <h2 class="boxtitle">PROMO</h2>
+        <p class="sticket promo">THE FIRST 100 TICKET BUYERS GET A SPECIAL DISCOUNT.</p>
+        <p class="limited">LIMITED SLOTS ONLY!</p>
+    </div>
+
+    <p class="tickets">GET YOUR TICKETS NOW</p>
+
+</body>
+</html>
